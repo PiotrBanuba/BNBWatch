@@ -13,9 +13,9 @@ let package = Package(
             name: "BNBWatch",
             targets: [
                 "BNBWatch",
-                "BNBWatchBNBSdkCoreTarget",
-                "BNBWatchBNBEffectPlayerTarget",
-                "BNBWatchBNBScriptingTarget"
+                "BNBWatchBNBSdkCore",
+                "BNBWatchBNBEffectPlayer",
+                "BNBWatchBNBScripting"
             ]
         ),
     ],
@@ -40,7 +40,7 @@ let package = Package(
             checksum: "5f29b0976b251d596e2ae126486956d8cd9084a0d5db136198b13eed8364ad28"
         ),
         .target(
-            name: "BNBWatchBNBSdkCoreTarget",
+            name: "BNBWatchBNBSdkCore",
             dependencies: [
                 .product(
                     name: "BNBSdkCore",
@@ -49,7 +49,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BNBWatchBNBEffectPlayerTarget",
+            name: "BNBWatchBNBEffectPlayer",
             dependencies: [
                 .product(
                     name: "BNBEffectPlayer",
@@ -58,7 +58,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BNBWatchBNBScriptingTarget",
+            name: "BNBWatchBNBScripting",
             dependencies: [
                 .product(
                     name: "BNBScripting",
