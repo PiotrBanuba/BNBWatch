@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 import PackageDescription
 
-let bnbPackageVersion: Version = "1.8.0-11"
+let bnbPackageVersion: Version = "1.8.0-13"
 
 let package = Package(
     name: "BNBWatch",
@@ -12,10 +12,10 @@ let package = Package(
         .library(
             name: "BNBWatch",
             targets: [
-                "BNBWatch",
-                "BNBSdkCore",
-                "BNBEffectPlayer",
-                "BNBScripting"
+                "BNBWatch_Target",
+                "BNBWatch_BNBWatch_Target",
+                "BNBWatch_BNBWatch_Target",
+                "BNBWatch_BNBWatch_Target"
             ]
         ),
     ],
@@ -35,9 +35,36 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "BNBWatch",
+            name: "BNBWatch_Target",
             url: "https://d2cm7wtcqqw29.cloudfront.net/1.8.0-58-g46079e7d74/BNBWatch.zip",
             checksum: "5f29b0976b251d596e2ae126486956d8cd9084a0d5db136198b13eed8364ad28"
+        ),
+        .target(
+            name: "BNBWatch_BNBSdkCore_Target",
+            dependencies: [
+                .product(
+                    name: "BNBSdkCore",
+                    package: "BNBSdkCore"
+                ),
+            ]
+        ),
+        .target(
+            name: "BNBWatch_BNBEffectPlayer_Target",
+            dependencies: [
+                .product(
+                    name: "BNBEffectPlayer",
+                    package: "BNBEffectPlayer"
+                ),
+            ]
+        ),
+        .target(
+            name: "BNBWatch_BNBScripting_Target",
+            dependencies: [
+                .product(
+                    name: "BNBScripting",
+                    package: "BNBScripting"
+                ),
+            ]
         ),
     ]
 )
